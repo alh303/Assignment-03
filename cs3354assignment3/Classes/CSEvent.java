@@ -57,7 +57,7 @@ public class CSEvent {
   
   
   //**************************************************
-  //C]onstructor that uses input to assign values to the variables members.
+  //Constructor that uses input to assign values to the variables members.
   public CSEvent(String n, String d, int day, int m, int y, int h, int min)
   {
     setName(n);
