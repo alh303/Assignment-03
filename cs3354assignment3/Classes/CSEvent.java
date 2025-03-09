@@ -6,7 +6,7 @@ public class CSEvent {
   //Private variables
 	private String name;
   	private String description;
-  	private CSDateTime eventDate = new CSDateTime();
+  	private CSDateTime eventDate;
   //**************************************************
   
   //**************************************************
@@ -30,9 +30,9 @@ public class CSEvent {
   //Mutator functions
 	public void setName(String n)
   {
-    	if(n == null)
+    	if(n.equals("") || n == null)
     	{
-      		name = "N/A";
+      		name = "Unknown";
       	} else {
       		name = n;
       	}	
@@ -41,7 +41,7 @@ public class CSEvent {
   {
     	if(d == null)
     	{
-      		description = "N/A";
+      		description = "";
     	} else {
       		description = d;
     	}
@@ -62,11 +62,7 @@ public class CSEvent {
   {
     setName(n);
     setDescription(d);
-    eventDate.setDay(day);
-    eventDate.setMonth(m);
-    eventDate.setYear(y);
-    eventDate.setHours(h);
-    eventDate.setMinutes(m);
+    eventDate = new CSDateTime(day, m, y, h, min);
   }
   //**************************************************
 }

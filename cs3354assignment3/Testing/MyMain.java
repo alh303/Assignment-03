@@ -9,6 +9,7 @@ package Testing;
 
 import Classes.CSDate;
 import Classes.CSDateTime;
+import Classes.CSEvent;
 
 public class MyMain {
     public static void main(String[] args) {
@@ -38,5 +39,25 @@ public class MyMain {
         // Print the updated CSDate and CSDateTime
         System.out.println("Updated CSDate: " + date);  // It will print: 20 Oct 2025
         System.out.println("Updated CSDateTime: " + dateTime);  // It will print: 10/20/2025 14:45
+
+        // Create a CSEvent with specific values
+        CSEvent event = new CSEvent("Graduation", "Class graduation party for Spring 2025", 15, 5, 2025, 17, 0);
+
+        // Print the CSEvent using the toString method
+        System.out.println("CSEvent:");
+        System.out.println(event.toString());   // It will print 3 lines: name, description, date
+
+        // Modify all values for the CSEvent object
+        event.setName("Meeting");
+        event.setDescription("Need to discuss actions for the coming financial quarter.");
+        event.getEventDateTime().setDay(14);
+        event.getEventDateTime().setMonth(3);
+        event.getEventDateTime().setYear(2023);
+        event.getEventDateTime().setHours(12);
+        event.getEventDateTime().setMinutes(30);
+
+        // Print the modified CSEvent using the toString method
+        System.out.println("Updated CSEvent:");
+        System.out.println(event.toString());   // It will print 3 lines: name, description, date
     }
 }
